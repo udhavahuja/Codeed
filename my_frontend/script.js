@@ -9,8 +9,8 @@ let currentQuestion = null; // Stores the current practice question
 let currentType = null;    // Stores the current question type
 let currentQuestionId = null; // Stores the current question ID
 let correctAnswer = null;  // Stores the correct answer for MCQs
-const BACKEND = "http://127.0.0.1:5000";  // Backend API URL
-const API = "http://127.0.0.1:5000"; // Backend API URL
+const BACKEND = "https://codeed-axuk.onrender.com/";  // Backend API URL
+const API = "https://codeed-axuk.onrender.com/"; // Backend API URL
 const box = document.getElementById("question-box");
 
 
@@ -945,7 +945,7 @@ async function attemptCoding() {
 
     document.getElementById("coding-result").innerText = "Checking...";
 
-    const res = await fetch("http://127.0.0.1:5000/ai/check-code", {
+    const res = await fetch("https://codeed-axuk.onrender.com/ai/check-code", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -1229,7 +1229,7 @@ async function explainCode() {
 
     box.innerHTML = `<p class="text-blue-400">Explaining your code… ⏳</p>`;
 
-    const res = await fetch("http://127.0.0.1:5000/ai/explain-code", {
+    const res = await fetch("https://codeed-axuk.onrender.com/ai/explain-code", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -5,8 +5,8 @@
 let isDarkMode = true;      // Tracks current theme state
 let isSidebarOpen = false;  // Tracks sidebar visibility
 let pomoInterval = null;    // Stores the Pomodoro timer reference
-const BACKEND = "http://127.0.0.1:5000";  // Backend API URL
-const API = "http://127.0.0.1:5000"; // Backend API URL
+const BACKEND = "https://codeed-axuk.onrender.com/";  // Backend API URL
+const API = "https://codeed-axuk.onrender.com/"; // Backend API URL
 let currentTopic = null;
 
 /*************************************************
