@@ -1,0 +1,21 @@
+***cntrl + , : For going to settings***
+Editor settings:
+
+Quick Suggestions: 
+Set this to Off (or configure other, comments, and strings to false) to stop suggestions from popping up automatically as you type.
+
+Inline Suggest: 
+Enabled: Uncheck this box to disable the dimmed, ghost-text suggestions (often from AI tools like Copilot).
+
+Suggest on Trigger Characters: 
+Uncheck this to prevent suggestions from appearing when you type characters like . or :.
+
+Parameter Hints: 
+Enabled: Uncheck this to stop the popups that show function parameters.
+
+Word Based Suggestions: 
+Set this to off or false to disable suggestions based purely on words in your current file.
+
+Accept Suggestion on Enter: 
+Change this to off if you want the Enter key to only insert a new line, not accept the highlighted suggestion. 
+

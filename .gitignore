@@ -1,0 +1,25 @@
+# Backend
+my_backend/venv/
+my_backend/.env
+__pycache__/
+*.pyc
+
+# Frontend
+my_frontend/node_modules/
+my_frontend/dist/
+
+# Media (VERY IMPORTANT – repo size)
+*.mp4
+
+# Editor
+.vscode/
+
+# OS
+Thumbs.db
+.DS_Store
+
+#just to be safe
+venv/
+.env
+__pycache__/
+*.pyc

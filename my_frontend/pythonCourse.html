@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Codeed - Python</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Charts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Icons -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    rel="stylesheet"
+  />
+
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="hstyle.css" />
+</head>
+
+<!-- Required scripting -->
+
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header
+  class="fixed top-0 left-0 right-0 h-20 glass-panel z-50 flex items-center px-6 mx-4 mt-4 relative">
+
+  <!-- LEFT SECTION -->
+  <div class="flex items-center gap-4">
+
+    <img src="codeed_logo.png" alt="Codeed Logo" class="h-18 w-auto object-contain" />
+  </div>
+
+
+  <!-- CENTER NAVBAR -->
+  <div class="absolute left-1/2 -translate-x-1/2">
+    <div class="glass-panel flex items-center gap-2 p-2 rounded-xl">
+      <button onclick="switchTopicTab('video')" class="px-6 py-2 rounded-lg hover:bg-blue-500/10 transition">
+        Video
+      </button>
+
+      <button onclick="switchTopicTab('visual')" class="px-6 py-2 rounded-lg hover:bg-blue-500/10 transition">
+        Visualization
+      </button>
+
+      <button onclick="switchTopicTab('notes')" class="px-6 py-2 rounded-lg hover:bg-blue-500/10 transition">
+        Notes
+      </button>
+
+      <button onclick="switchTopicTab('projects')" class="px-6 py-2 rounded-lg hover:bg-blue-500/10 transition">
+        Projects
+      </button>
+
+    </div>
+  </div>
+
+
+  <!-- RIGHT SECTION -->
+  <div class="ml-auto flex items-center gap-6">
+
+    <!-- Sidebar toggle (NOW ON RIGHT) -->
+  <button onclick="toggleSidebar()" 
+          class="text-2xl hover:text-accent-blue transition">
+      <i class="fas fa-bars"></i>
+  </button>
+
+    <button onclick="toggleTheme()" class="text-xl hover:text-accent-blue transition" id="theme-toggle">
+      <i class="fas fa-moon"></i>
+    </button>
+
+    <button class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center overflow-hidden border-2 border-accent-blue">
+      <img id="profile-img-preview"
+        src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix"
+        alt="Profile" />
+    </button>
+  </div>
+
+</header>
+x
+
+<!-- ================= SIDEBAR ================= -->
+<aside id="sidebar">
+  <div class="flex items-center gap-2">
+        <img src="codeed_logo.png" alt="Codeed Logo" class="h-12 w-auto object-contain" />
+       </div>
+
+      <!-- Close button -->
+  <button
+    onclick="toggleSidebar(); showPage('home')"
+    class="absolute top-4 right-4 text-2xl hover:text-accent-blue transition"
+  >
+    <i class="fas fa-times"></i>
+  </button>
+  <div class="nav-item" onclick="toggleSidebar();">
+    <i class="fas fa-mobile-alt w-8"></i> <a href="index.html">Back to Home</a>
+  </div>
+
+  <div class="nav-item" onclick="toggleSidebar(); showPage('timetable')">
+    <i class="fas fa-calendar-alt w-8"></i> Timetable
+  </div>
+
+  <div class="nav-item" onclick="toggleSidebar(); showPage('help')">
+    <i class="fas fa-question-circle w-8"></i> Help
+  </div>
+
+</aside>
+
+
+
+<!-- ================= MAIN CONTENT ================= -->
+<main class="container mx-auto px-4 pb-20 coursesmain">
+
+  <!-- INTRO -->
+  <section id="topic-intro" class="glass-panel p-8 max-w-4xl mx-auto mb-10">
+
+    <div id="intro-video" class="topic-page">
+      <h2 class="text-2xl font-bold mb-4">Video</h2>
+      <iframe src="https://www.youtube.com/embed/Eaz5e6M8tL4"
+        class="w-full rounded-lg" style="height:420px" allowfullscreen></iframe>
+    </div>
+
+    <div id="intro-visual" class="topic-page hidden">
+
+      <h2 class="text-2xl font-bold mb-6">List Functions — Visualization</h2>
+
+  <div class="space-y-10">
+
+    <!-- APPEND -->
+    <div class="glass-panel p-6 rounded-xl">
+      <h3 class="text-xl font-semibold mb-2">append()</h3>
+      <p class="mb-4">Adds an item at the end of the list.</p>
+
+      <video
+        class="w-full rounded-lg"
+        style="height:320px"
+        controls
+      >
+        <source src="appendfunc.mp4" type="video/mp4" />
+        Your browser does not support video playback.
+      </video>
+    </div>
+
+    <!-- EXTEND -->
+    <div class="glass-panel p-6 rounded-xl">
+      <h3 class="text-xl font-semibold mb-2">extend()</h3>
+      <p class="mb-4">Adds multiple elements at once.</p>
+
+      <video class="w-full rounded-lg" style="height:320px" controls>
+        <source src="extendfunc.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <!-- INSERT -->
+    <div class="glass-panel p-6 rounded-xl">
+      <h3 class="text-xl font-semibold mb-2">insert()</h3>
+      <p class="mb-4">Adds an element at a specific index.</p>
+
+      <video class="w-full rounded-lg" style="height:320px" controls>
+        <source src="insertfunc.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <!-- CLEAR -->
+    <div class="glass-panel p-6 rounded-xl">
+      <h3 class="text-xl font-semibold mb-2">clear()</h3>
+      <p class="mb-4">Removes all elements from the list.</p>
+
+      <video class="w-full rounded-lg" style="height:320px" controls>
+        <source src="clearfunc.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <!-- REVERSE -->
+    <div class="glass-panel p-6 rounded-xl">
+      <h3 class="text-xl font-semibold mb-2">reverse()</h3>
+      <p class="mb-4">Reverses the list order.</p>
+
+      <video class="w-full rounded-lg" style="height:320px" controls>
+        <source src="reversefunc.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+  </div>
+
+    </div>
+
+    <div id="intro-notes" class="topic-page hidden">
+      <h2 class="text-2xl font-bold mb-4">Notes</h2>
+      <p><b>Core Concepts and Key Insights</b><br>
+Lists in Python: A list is a collection of values grouped together using square brackets []. Lists can store multiple values of the same or different data types (integers, floats, strings, etc.), unlike arrays in languages like C, C++, or Java where elements typically must be of the same type.
+<br><br>
+<i>Creating Lists:</i>
+<br><br>
+Single or multiple values can be assigned using syntax like nums = [25, 12, 63, 95, 14]. <br>
+Lists of strings (e.g., names = ["Naveen", "Children", "John"]) or mixed types (e.g., values = [9.5, "Ivan", 25]) are possible. <br>
+Indexing and Slicing:
+<br><br>
+Access elements by zero-based index, e.g., nums[0] fetches the first element (25). <br>
+Negative indices can be used to access elements from the end, e.g., nums[-1] returns the last element (14). <br>
+Slicing syntax allows extraction of sublists, e.g., nums[2:] returns elements from the third to the last. <br>
+Nested Lists:
+<br><br>
+Lists can contain other lists, for example, mil = [nums, names] is a list of lists. <br>
+Mutability:
+<br><br>
+Lists are mutable, meaning values can be changed after creation. <br>
+Elements can be appended using append(), inserted at a specific index using insert(index, value), or removed by value with remove(value) or by index with pop(index). <br>
+Removal Methods:
+<br><br>
+remove(value) deletes the first occurrence of the specified value. <br>
+pop(index) removes and returns the element at the given index. <br>
+Calling pop() without arguments removes the last item (LIFO behavior, useful for implementing stacks). <br>
+del keyword can delete slices of a list, e.g., del nums[2:] removes all elements from index 2 onward. <br>
+Adding Multiple Elements:
+<br><br>
+Use extend() to add multiple elements at once, e.g., nums.extend([29, 12, 14, 36]). <br>
+Useful Built-in Functions and Methods:
+<br><br>
+min(list): returns the smallest element. <br>
+max(list): returns the largest element. <br>
+sum(list): returns the sum of elements. <br>
+sort(): sorts the list in ascending order (in-place). <br>
+Interactive Coding Tips:
+<br><br>
+Use IDE features like autocomplete (Ctrl + Space) to explore available list methods. <br>
+Python has extensive online documentation; learning to read it is emphasized. <br>
+The upcoming video will cover the help() command for accessing Python documentation interactively. <br><br>
+<b>Markdown Table for List Methods Explained</b><br>
+Method / Function	Purpose	Example Usage	Notes<br>
+append(value):	Add single element to the end of the list	nums.append(45)	Adds element at the last position<br>
+insert(index, value):	Insert element at specified index	nums.insert(2, 2077)	Shifts elements to the right after insertion<br>
+remove(value):	Remove first occurrence of a value	nums.remove(14)	Raises error if value not found<br>
+pop(index):	Remove and return element at index	nums.pop(1)	If no index, removes last element (stack behavior)<br>
+del (keyword):	Delete elements or slices from list	del nums[2:]	Deletes from index 2 to end<br>
+extend(iterable):	Add multiple elements from iterable	nums.extend([29, 12, 14, 36])	Extends list by appending elements from iterable<br>
+sort():	Sort list in ascending order	nums.sort()	In-place sorting<br>
+min(iterable):	Returns minimum element	min(nums)	Works on numeric or comparable elements<br>
+max(iterable):	Returns maximum element	max(nums)	<br>
+sum(iterable):	Returns sum of numeric elements	sum(nums)<br><br>	
+<b>Summary of Key Takeaways</b><br>
+Python lists are versatile, mutable collections that can hold heterogeneous data types.<br>
+Lists support indexing, slicing, and negative indexing for flexible data access.<br>
+They provide rich built-in methods for adding, removing, and manipulating elements.<br>
+Python’s in-built functions simplify common operations like finding min, max, sum, and sorting.<br>
+Lists can contain nested lists, enabling complex data structures.<br>
+The language’s interactive features and documentation are valuable tools for learning and productivity.<br>
+Understanding and practicing list operations is crucial for effective Python programming.<br><br>
+<b>Closing Notes</b><br>
+The video is part of a series on Python programming and encourages viewers to practice the demonstrated list operations on their own machines. It emphasizes the importance of reading Python’s official documentation and previews a future tutorial on the help() command.</p>
+    </div>
+
+    <div id="intro-projects" class="topic-page hidden">
+  <h2 class="text-2xl font-bold mb-4 text-center">
+    🚧 Projects — Coming Soon!!
+  </h2>
+  <div class="flex justify-center">
+    <button
+    disabled
+    class="mt-4 px-6 py-2 rounded-full font-bold
+           bg-gray-500/40 text-gray-300
+           border border-gray-400/30
+           cursor-not-allowed
+           opacity-70
+           hover:opacity-70">
+    Collect your Badge
+  </button>
+</div>
+
+  </div>
+
+  </section>
+
+
+  <!-- VARIABLES -->
+  <section id="topic-variables" class="glass-panel p-8 max-w-4xl mx-auto mb-10 hidden">
+
+    <div id="variables-video" class="topic-page">
+      <h2 class="text-2xl font-bold mb-4">Video</h2>
+      <iframe src="https://www.youtube.com/embed/kqtD5dpn9C8"
+        class="w-full rounded-lg" style="height:420px" allowfullscreen></iframe>
+    </div>
+
+    <div id="variables-visual" class="topic-page hidden">
+      <h2 class="text-2xl font-bold mb-4">Visualization</h2>
+      <p>Visualization content here.</p>
+    </div>
+
+    <div id="variables-notes" class="topic-page hidden">
+      <h2 class="text-2xl font-bold mb-4">Notes</h2>
+      <p>Notes here.</p>
+    </div>
+
+    
+  <div id="variables-projects" class="topic-page hidden">
+  <h2 class="text-2xl font-bold mb-4 text-center">
+    🚧 Projects — Coming Soon!!
+  </h2>
+  </div>
+
+  </section>
+
+
+  <!-- CONDITIONS -->
+  <section id="topic-conditions" class="glass-panel p-8 max-w-4xl mx-auto mb-10 hidden">
+
+    <div id="conditions-video" class="topic-page">
+      <h2 class="text-2xl font-bold mb-4">Video</h2>
+      <iframe src="https://www.youtube.com/embed/f4KOjWS_KZs"
+        class="w-full rounded-lg" style="height:420px" allowfullscreen></iframe>
+    </div>
+
+    <div id="conditions-visual" class="topic-page hidden">
+      <h2 class="text-2xl font-bold mb-4">Visualization</h2>
+      <p>Visualization content here.</p>
+    </div>
+
+    <div id="conditions-notes" class="topic-page hidden">
+      <h2 class="text-2xl font-bold mb-4">Notes</h2>
+      <p>Notes here.</p>
+    </div>
+
+  <div id="conditions-projects" class="topic-page hidden">
+  <h2 class="text-2xl font-bold mb-4 text-center">
+    🚧 Projects — Coming Soon!!
+  </h2>
+  </div>
+  </section>
+
+
+  <!-- LOOPS -->
+  <section id="topic-loops" class="glass-panel p-8 max-w-4xl mx-auto mb-10 hidden">
+
+    <div id="loops-video" class="topic-page">
+      <h2 class="text-2xl font-bold mb-4">Video</h2>
+      <iframe src="https://www.youtube.com/embed/6iF8Xb7Z3wQ"
+        class="w-full rounded-lg" style="height:420px" allowfullscreen></iframe>
+    </div>
+
+    <div id="loops-visual" class="topic-page hidden">
+      <h2 class="text-2xl font-bold mb-4">Visualization</h2>
+      <p>Visualization content here.</p>
+    </div>
+
+    <div id="loops-notes" class="topic-page hidden">
+      <h2 class="text-2xl font-bold mb-4">Notes</h2>
+      <p>Notes here.</p>
+    </div>
+
+  <div id="loops-projects" class="topic-page hidden">
+  <h2 class="text-2xl font-bold mb-4 text-center">
+    🚧 Projects — Coming Soon!!
+  </h2>
+  </div>
+  </section>
+
+
+  <!-- LISTS -->
+  <section id="topic-lists" class="glass-panel p-8 max-w-4xl mx-auto mb-10 hidden">
+
+    <div id="lists-video" class="topic-page">
+      <h2 class="text-2xl font-bold mb-4">Video</h2>
+      <iframe src="https://www.youtube.com/embed/Eaz5e6M8tL4"
+        class="w-full rounded-lg" style="height:420px" allowfullscreen></iframe>
+    </div>
+
+    <div id="lists-visual" class="topic-page hidden">
+      <h2 class="text-2xl font-bold mb-4">Visualization</h2>
+      <p>Visualization content here.</p>
+    </div>
+
+    <div id="lists-notes" class="topic-page hidden">
+      <h2 class="text-2xl font-bold mb-4">Notes</h2>
+      <p>Notes here.</p>
+    </div>
+
+  <div id="lists-projects" class="topic-page hidden">
+  <h2 class="text-2xl font-bold mb-4 text-center">
+    🚧 Projects — Coming Soon!!
+  </h2>
+  </div>
+  </section>
+
+
+  <!-- DICTIONARIES -->
+  <section id="topic-dicts" class="glass-panel p-8 max-w-4xl mx-auto mb-10 hidden">
+
+    <div id="dicts-video" class="topic-page">
+      <h2 class="text-2xl font-bold mb-4">Video</h2>
+      <iframe src="https://www.youtube.com/embed/daefaLgNkw0"
+        class="w-full rounded-lg" style="height:420px" allowfullscreen></iframe>
+    </div>
+
+    <div id="dicts-visual" class="topic-page hidden">
+      <h2 class="text-2xl font-bold mb-4">Visualization</h2>
+      <p>Visualization content here.</p>
+    </div>
+
+    <div id="dicts-notes" class="topic-page hidden">
+      <h2 class="text-2xl font-bold mb-4">Notes</h2>
+      <p>Notes here.</p>
+    </div>
+
+  <div id="dicts-projects" class="topic-page hidden">
+    <h2>Coming Soon!!</h2>
+  </div>
+  </section>
+
+
+  <!-- FUNCTIONS -->
+  <section id="topic-functions" class="glass-panel p-8 max-w-4xl mx-auto mb-10 hidden">
+
+    <div id="functions-video" class="topic-page">
+      <h2 class="text-2xl font-bold mb-4">Video</h2>
+      <iframe src="https://www.youtube.com/embed/9Os0o3wzS_I"
+        class="w-full rounded-lg" style="height:420px" allowfullscreen></iframe>
+    </div>
+
+    <div id="functions-visual" class="topic-page hidden">
+      <h2 class="text-2xl font-bold mb-4">Visualization</h2>
+      <p>Visualization content here.</p>
+    </div>
+
+    <div id="functions-notes" class="topic-page hidden">
+      <h2 class="text-2xl font-bold mb-4">Notes</h2>
+      <p>Notes here.</p>
+    </div>
+
+  <div id="functions-projects" class="topic-page hidden">
+    <h2>Coming Soon!!</h2>
+  </div>
+  </section>
+
+
+  <!-- OOP -->
+  <section id="topic-oop" class="glass-panel p-8 max-w-4xl mx-auto mb-10 hidden">
+
+    <div id="oop-video" class="topic-page">
+      <h2 class="text-2xl font-bold mb-4">Video</h2>
+      <iframe src="https://www.youtube.com/embed/JeznW_7DlB0"
+        class="w-full rounded-lg" style="height:420px" allowfullscreen></iframe>
+    </div>
+
+    <div id="oop-visual" class="topic-page hidden">
+      <h2 class="text-2xl font-bold mb-4">Visualization</h2>
+      <p>Visualization content here.</p>
+    </div>
+
+    <div id="oop-notes" class="topic-page hidden">
+      <h2 class="text-2xl font-bold mb-4">Notes</h2>
+      <p>Notes here.</p>
+    </div>
+
+  <div id="oop-projects" class="topic-page hidden">
+    <h2>Coming Soon!!</h2>
+  </div>
+  </section>
+
+</main>
+
+
+<!-- HELP / TIMETABLE remain unchanged -->
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="course.js"></script>
+
+
+</body>
+</html>

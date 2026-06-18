@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Codeed · Login</title>
+
+  <link rel="stylesheet" href="hstyle.css">
+</head>
+
+<body>
+  <div class="screen">
+    <div class="card">
+
+      <!-- LOGO -->
+      <div class="logo">
+        <img src="codeed_Logo2.png" class="echo-logo" alt="Codeed Logo" />
+      </div>
+
+      <!-- TABS -->
+      <div class="tabs">
+        <div class="tab active" id="loginTab">Sign in</div>
+        <div class="tab" id="registerTab">Create account</div>
+      </div>
+
+      <!-- LOGIN -->
+      <div id="loginForm">
+        <h1>Sign in</h1>
+        <p class="subtitle">Welcome back to Codeed!</p>
+
+        <label>Email</label>
+        <input class="login" type="email" placeholder="Your email" id="loginEmail"/>
+
+        <label>Password</label>
+        <input class="login" type="password" placeholder="Your password" id="loginPassword"/>
+
+        <button type="button" class="forgot-btn" onclick="goToForgot()">
+          Forgot your password?
+        </button>
+
+
+
+        <button class="primary-btn" id="loginBtn" type="button">
+          Sign in
+        </button>
+
+        <label class="remember">
+            <input type="checkbox" id="rememberMe">
+            Remember Me
+        </label>
+
+      </div>
+
+      <!-- REGISTER -->
+      <div id="registerForm" class="hidden">
+        <h1>Create account</h1>
+        <p class="subtitle">Let’s get you started.</p>
+
+        <label>Name</label>
+        <input class="login" type="text" placeholder="Your name" id="regName" />
+
+        <label>Email</label>
+        <input class="login" type="email" placeholder="Your email" id="regEmail"/>
+
+        <label>Password</label>
+        <input class="login" type="password" placeholder="Create password" id="regPassword"/>
+
+        <label>Confirm Password</label>
+        <input class="login" type="password" placeholder="Confirm password" id="regConPassword"/>
+
+        <button class="primary-btn" id="registerBtn" type="button">
+          Create account
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="auth.js"></script>
+</body>
+</html>

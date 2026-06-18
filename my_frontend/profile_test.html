@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Profile API Test</title>
+</head>
+
+<body>
+  <h2>TEST PROFILE API</h2>
+
+  <label>Email stored:</label>
+  <input id="email" />
+  <button onclick="saveEmail()">Save Email</button>
+
+  <hr>
+
+  <button onclick="loadProfile()">Load Profile (GET /me)</button>
+  <p id="profile-output"></p>
+
+  <hr>
+
+  <input id="newName" placeholder="Enter new name" />
+  <button onclick="updateProfile()">Update Profile (PUT /me)</button>
+
+  <p id="update-output"></p>
+
+  <script src="profile_test.js"></script>
+</body>
+</html>

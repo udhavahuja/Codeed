@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Forgot Password</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="screen">
+  <div class="card">
+
+    <h1>Forgot Password</h1>
+    <p class="subtitle">We’ll send you an OTP</p>
+
+    <!-- STEP 1: EMAIL -->
+    <div id="emailStep">
+      <label>Email</label>
+      <input type="email" id="fpEmail" placeholder="Enter your email" class="login">
+      <button class="primary-btn" id="sendOtpBtn">Send OTP</button>
+    </div>
+
+    <!-- STEP 2: OTP + NEW PASSWORD -->
+<div id="resetStep" class="hidden">
+  <label>OTP</label>
+  <input type="text" id="otpInput" placeholder="Enter OTP" class="login">
+
+  <button type="button" class="forgot-btn" id="resendOtpBtn">
+    Resend OTP
+  </button>
+
+  <label>New Password</label>
+  <input type="password" id="newPassword" placeholder="New password" class="login">
+
+  <button class="primary-btn" id="resetBtn" type="button">
+    Reset Password
+  </button>
+</div>
+
+
+  </div>
+</div>
+
+<script src="forgot.js"></script>
+</body>
+</html>
